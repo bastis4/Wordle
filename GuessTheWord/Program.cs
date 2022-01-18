@@ -7,7 +7,7 @@ class Solution
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        string filePath = "D:\\Docs\\test.txt";
+        string filePath = @"D:\AMD\VS projects\GuessTheWord\GuessTheWord\words.txt";
         StreamReader sr = new StreamReader(filePath);
         List<string> words = new List<string>();
         while (!sr.EndOfStream)
