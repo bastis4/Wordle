@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kaANZU0TkcyY+6cV0D/xNZgzbGPamg8QMybAih+dVWXzBi8+/3rfBx3MuL9z30Rzv7prf8/AqAMoBQ9k0OubFg==",
+  "success": true,
+  "projectFilePath": "D:\\AMD\\VS projects\\GuessTheWord\\GuessTheWord\\GuessTheWord.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AMD\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\AMD\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
