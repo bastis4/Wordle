@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-TextFile1",
+      "appliesTo": "GuessTheWord/TextFile1.txt",
+      "type": "launch"
+    }
+  ]
+}
