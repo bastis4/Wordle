@@ -11,14 +11,11 @@ class Solution
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        
         string[] words = File.ReadAllLines(filePath);
         var r = rnd.Next(words.Length);
         var wordToGuess = words[r];
-
         Console.WriteLine("Введите слово из " + words[r].Length + " букв:");
         var count = 0;
-       
         while (count < maxCountOfTries)
         {
             var inputWord = Console.ReadLine();
@@ -36,9 +33,7 @@ class Solution
     
     static void CheckInputWord(string wordToGuess, string inputWord) 
     {
-        
         Console.SetCursorPosition(0, Console.CursorTop - 1);
-
             if (wordToGuess == inputWord)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -47,34 +42,23 @@ class Solution
                 Console.WriteLine("BINGO!");
                 return;
             }
-
             else
             {
                 for (int i = 0; i < wordToGuess.Length; i++)
                 {
-
                     if (wordToGuess[i] == inputWord[i])
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(inputWord[i]);
-                        Console.ResetColor();
                     }
-
                     else if (wordToGuess.Contains(inputWord[i]))
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write(inputWord[i]);
-                        Console.ResetColor();
                     }
-
-                    else
-                    {
-                        Console.Write(inputWord[i]);
-                    }
-                }
+                Console.Write(inputWord[i]);
+                Console.ResetColor();
+            }
                 Console.WriteLine();
                 return;
-
             }   
     }
 }
