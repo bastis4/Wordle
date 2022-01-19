@@ -4,30 +4,29 @@ using System.Text;
 
 class Solution
 {
+    static string filePath = @"D:\AMD\VS projects\GuessTheWord\GuessTheWord\words.txt";
+    static int maxCountOfTries = 6;
+    static Random rnd = new Random();
+
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        string filePath = @"D:\AMD\VS projects\GuessTheWord\GuessTheWord\words.txt";
-        StreamReader sr = new StreamReader(filePath);
-        List<string> words = new List<string>();
-        while (!sr.EndOfStream)
-        {
-            words.Add(sr.ReadLine());    
-        }
-        sr.Close();
-        int r = rnd.Next(words.Count);
-        string wordToGuess = words[r];
+        
+        string[] words = File.ReadAllLines(filePath);
+        var r = rnd.Next(words.Length);
+        var wordToGuess = words[r];
+
         Console.WriteLine("Введите слово из " + words[r].Length + " букв:");
-        int count = 0;
-        int countOfTries = 6;
-        while (count < countOfTries)
+        var count = 0;
+       
+        while (count < maxCountOfTries)
         {
-            string inputWord = Console.ReadLine();
+            var inputWord = Console.ReadLine();
             CheckInputWord(wordToGuess, inputWord);
             count++;
         }
     }
-    static Random rnd = new Random();
+    
     static void CheckInputWord(string wordToGuess, string inputWord) 
     {
         
@@ -78,24 +77,6 @@ class Solution
         {
             Console.WriteLine();
             Console.WriteLine("В вашем слове маловато букв");
-        }
-      
+        }     
     }
-
-    /*static void Graphics(string wordToGuess)
-    {
-        int numberOfLetters = wordToGuess.Length;
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        //string symbol = "\u25A1";
-        string symbol = "\u1F79";
-        int numberOfTries = 6;
-        for (int i = 0; i < numberOfTries; i++)
-        {
-            for (int y = 0; y < numberOfLetters; y++)
-            {
-                Console.Write(symbol);
-            }
-            Console.WriteLine();
-        }
-    }*/
 }
