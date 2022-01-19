@@ -22,8 +22,15 @@ class Solution
         while (count < maxCountOfTries)
         {
             var inputWord = Console.ReadLine();
-            CheckInputWord(wordToGuess, inputWord);
-            count++;
+            if(inputWord.Length != wordToGuess.Length)
+            {
+                Console.WriteLine("Длина введенного слова не соответствует загаданному.");
+            }
+            else
+            {
+                CheckInputWord(wordToGuess, inputWord);
+                count++;
+            } 
         }
     }
     
@@ -31,9 +38,6 @@ class Solution
     {
         
         Console.SetCursorPosition(0, Console.CursorTop - 1);
-
-        try
-        {
 
             if (wordToGuess == inputWord)
             {
@@ -71,12 +75,6 @@ class Solution
                 Console.WriteLine();
                 return;
 
-            }
-        }
-        catch (IndexOutOfRangeException ex)
-        {
-            Console.WriteLine();
-            Console.WriteLine("В вашем слове маловато букв");
-        }     
+            }   
     }
 }
